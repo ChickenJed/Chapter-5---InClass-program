@@ -1,2 +1,49 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+// Christian Verry
+// 4- 13 - 20
+
+#include <iostream>
+using namespace std;
+
+//Precondition(s): arguments (number1 and number2) are numeric values
+//Postcondition(s): returns the bigger number
+int maximum(int number1, int number2);
+
+//Precondition(s): arguments (number1 and number2) are numeric values
+//Postcondition(s): result will be assigned to the bigger number
+void maximum2(int number1, int number2, int& result); // return 'nothing', however the pass-by-reference gets changed
+
+int main() // driver function
+{
+	int number1 = 4;
+	int number2 = 4;
+
+	cout << "the bigger number = " << maximum(number1, number2) << '\n';
+
+	int result = 0;
+	maximum2(number1, number2, result); // calling of the void function
+	cout << "the bigger number = " << result << '\n';
+
+	return 0;
+}
+
+int maximum(int number1, int number2)
+{
+	if (number1 >= number2)
+		return number1;
+	else
+		return number2;
+		
+	//return number1 >= number2 ? number1 : number2;
+}
+
+void maximum2(int number1, int number2, int& result)
+{
+	if (number1 >= number2)
+		result = number1;
+	else
+		result = number2;
+
+	//return; optional
+}
